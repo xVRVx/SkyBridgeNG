@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -21,7 +23,7 @@ android {
             abi {
                 isEnable = true
                 reset()
-                if (abiFilterList != null && abiFilterList.isNotEmpty()) {
+                if (!abiFilterList.isNullOrEmpty()) {
                     include(*abiFilterList.toTypedArray())
                 } else {
                     include(
