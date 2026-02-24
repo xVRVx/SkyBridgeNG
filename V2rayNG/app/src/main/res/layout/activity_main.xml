@@ -111,6 +111,21 @@
                         app:layout_anchorGravity="bottom|right|end" />
 
                 </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvEmptyProfileMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Не добавлено ни 1-го профиля, перейдите в Телеграм, чтобы получить БЕСПЛАТНЫЙ ВПН - https://t.me/SkyBridge_VPN_bot"
+                    android:autoLink="web"
+                    android:linksClickable="true"
+                    android:padding="24dp"
+                    android:textSize="18sp"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:visibility="gone"
+                    android:elevation="10dp" />
+
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -125,18 +140,6 @@
 
     </com.google.android.material.navigation.NavigationView>
 
-    <TextView
-        android:id="@+id/tvEmptyProfileMsg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Не добавлено ни 1-го профиля, перейдите в Телеграм, чтобы получить БЕСПЛАТНЫЙ ВПН - https://t.me/SkyBridge_VPN_bot"
-        android:autoLink="web"
-        android:linksClickable="true"
-        android:padding="24dp"
-        android:textSize="18sp"
-        android:textColor="?android:attr/textColorPrimary"
-        android:visibility="gone"
-        android:elevation="10dp" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
