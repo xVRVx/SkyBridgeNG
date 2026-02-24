@@ -32,6 +32,7 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -56,9 +57,9 @@
                         android:id="@+id/view_pager"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_weight="1"
                         android:nextFocusRight="@+id/fab"
-                        android:scrollbars="vertical"
-                        android:layout_weight="1" />
+                        android:scrollbars="vertical" />
 
                     <LinearLayout
                         android:id="@+id/layout_test"
@@ -115,16 +116,17 @@
                 <TextView
                     android:id="@+id/tvEmptyProfileMsg"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Не добавлено ни 1-го профиля, перейдите в Телеграм, чтобы получить БЕСПЛАТНЫЙ ВПН - https://t.me/SkyBridge_VPN_bot"
+                    android:layout_height="339dp"
                     android:autoLink="web"
+                    android:gravity="center"
                     android:linksClickable="true"
                     android:padding="24dp"
-                    android:textSize="18sp"
+                    android:text="Перейдите в Телеграм, чтобы добавить нашу подписку на ВПН - https://t.me/SkyBridge_VPN_bot"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:visibility="gone"
-                    android:elevation="10dp" />
+                    android:textSize="28sp"
+                    android:visibility="visible"
+                    app:layout_anchor="@+id/linearLayout"
+                    app:layout_anchorGravity="center" />
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </RelativeLayout>
