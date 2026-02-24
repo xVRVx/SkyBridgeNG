@@ -25,7 +25,10 @@ android {
                     include(*abiFilterList.toTypedArray())
                 } else {
                     include(
-                        "arm64-v8a"
+                        "arm64-v8a",
+                        "armeabi-v7a",
+                        "x86_64",
+                        "x86"
                     )
                 }
                 isUniversalApk = abiFilterList.isNullOrEmpty()
