@@ -120,10 +120,10 @@
                     android:autoLink="web"
                     android:gravity="center"
                     android:linksClickable="true"
-                    android:padding="24dp"
-                    android:text="Перейдите в Телеграм, чтобы добавить нашу подписку на ВПН - https://t.me/SkyBridge_VPN_bot"
+                    android:padding="20dp"
+                    android:text="SkyBridge VPN\n\nПерейдите в Телеграм, чтобы получить нашу ВПН подписку\nhttps://t.me/SkyBridge_VPN_bot"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="28sp"
+                    android:textSize="25sp"
                     android:visibility="visible"
                     app:layout_anchor="@+id/linearLayout"
                     app:layout_anchorGravity="center" />
