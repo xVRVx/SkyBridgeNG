@@ -1,27 +1,53 @@
 [
   {
-    "remarks": "阻断udp443",
+    "remarks": "blockSB",
     "outboundTag": "block",
-    "port": "443",
-    "network": "udp"
+    "domain": [
+      "geosite:category-ads",
+      "geosite:win-spy"
+    ]
   },
   {
-    "remarks": "绕过局域网IP",
+    "remarks": "Bypass bittorrent",
+    "outboundTag": "direct",
+    "protocol": [
+      "bittorrent"
+    ]
+  },
+  {
+    "remarks": "proxySB",
+    "outboundTag": "proxy",
+    "domain": [
+      "habr.com",
+      "apkmirror.com"
+    ]
+  },
+  {
+    "remarks": "directSB",
+    "outboundTag": "direct",
+    "domain": [
+	  "geosite:private",
+	  "geosite:apple",
+	  "geosite:apple-pki",
+	  "geosite:huawei",
+	  "geosite:xiaomi",
+	  "geosite:category-android-app-download",
+	  "geosite:f-droid",
+	  "geosite:yandex",
+	  "geosite:vk",
+	  "geosite:microsoft",
+	  "geosite:win-update",
+	  "geosite:win-extra",
+	  "geosite:google-play",
+	  "geosite:steam",
+	  "geosite:category-ru"
+    ]
+  },
+  {
+    "remarks": "Direct LAN IP",
     "outboundTag": "direct",
     "ip": [
       "geoip:private"
     ]
-  },
-  {
-    "remarks": "绕过局域网域名",
-    "outboundTag": "direct",
-    "domain": [
-      "geosite:private"
-    ]
-  },
-  {
-    "remarks": "最终代理",
-    "port": "0-65535",
-    "outboundTag": "proxy"
   }
 ]
