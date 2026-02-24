@@ -104,15 +104,15 @@ class MainActivity : HelperBaseActivity(), NavigationView.OnNavigationItemSelect
         }
 
         // Делаем ссылки в тексте кликабельными
-        binding.tvEmptyProfileMsg.movementMethod = android.text.method.LinkMovementMethod.getInstance()
+        // binding.tvEmptyProfileMsg.movementMethod = android.text.method.LinkMovementMethod.getInstance()
 
         // Подписываемся на сигнал обновления списка серверов
-        mainViewModel.updateListAction.observe(this) {
-            binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
-        }
+        // mainViewModel.updateListAction.observe(this) {
+        //    binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
+        // }
 
         // Делаем контрольную проверку 1 раз при запуске экрана
-        binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
+        // binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
 
     }
 
