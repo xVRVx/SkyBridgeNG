@@ -1,4 +1,4 @@
-# v2rayNG
+# SkyBridgeNG
 
 A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-core) and [v2fly core](https://github.com/v2fly/v2ray-core)
 
@@ -11,6 +11,7 @@ A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-cor
 
 ### Telegram Channel
 [SkyBridge](https://t.me/SkyBridge_VPN_bot)
+
 [github_2dust](https://t.me/github_2dust)
 
 ### Usage
@@ -31,3 +32,5 @@ For a quick start, read guide for [Go Mobile](https://github.com/golang/go/wiki/
 
 v2rayNG can run on Android Emulators. For WSA, VPN permission need to be granted via
 `appops set [package name] ACTIVATE_VPN allow`
+
+### SkyBridgeNG - forked from 2dust/v2rayNG

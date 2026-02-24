@@ -113,18 +113,17 @@
 
                 </FrameLayout>
 
+                <!-- НАШ TEXTVIEW БЕЗ АТРИБУТА TEXT -->
                 <TextView
                     android:id="@+id/tvEmptyProfileMsg"
                     android:layout_width="match_parent"
                     android:layout_height="339dp"
-                    android:autoLink="web"
                     android:gravity="center"
                     android:linksClickable="true"
                     android:padding="20dp"
-                    android:text="SkyBridge VPN\n\nПерейдите в Телеграм, чтобы получить нашу ВПН подписку\nhttps://t.me/SkyBridge_VPN_bot"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="23sp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     app:layout_anchor="@+id/linearLayout"
                     app:layout_anchorGravity="center" />
 
@@ -142,7 +141,5 @@
         app:menu="@menu/menu_drawer">
 
     </com.google.android.material.navigation.NavigationView>
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -103,13 +103,32 @@ class MainActivity : HelperBaseActivity(), NavigationView.OnNavigationItemSelect
         checkAndRequestPermission(PermissionType.POST_NOTIFICATIONS) {
         }
 
-        // Делаем ссылки в тексте кликабельными
+// --- НАШ КОД ДЛЯ ПУСТОГО ЭКРАНА ---
+
+        // 1. Формируем текст с HTML тегами (используем <br> для переноса строки)
+        // Для прокси я использовал ссылку https://t.me/proxy?... - она надежнее открывает Telegram на всех устройствах
+        val emptyTextHtml = """
+            <b>SkyBridge VPN</b><br><br>
+            Перейдите в Телеграм, чтобы получить нашу ВПН подписку<br>
+            <a href="https://t.me/SkyBridge_VPN_bot">https://t.me/SkyBridge_VPN_bot</a><br><br>
+            <a href="https://t.me/proxy?server=fr1pr.sbknvp.xyz&port=443&secret=cbe8b9c11b4de45c7594089b93c25d59">ТГ прокси №1</a>
+        """.trimIndent()
+
+        // 2. Превращаем строку в HTML и отдаем в наш TextView
+        binding.tvEmptyProfileMsg.text = androidx.core.text.HtmlCompat.fromHtml(
+            emptyTextHtml,
+            androidx.core.text.HtmlCompat.FROM_HTML_MODE_LEGACY
+        )
+
+        // 3. Делаем ссылки кликабельными
         binding.tvEmptyProfileMsg.movementMethod = android.text.method.LinkMovementMethod.getInstance()
-        // Подписываемся на сигнал обновления списка серверов
+
+        // 4. Подписываемся на обновления списка серверов для скрытия/показа текста
         mainViewModel.updateListAction.observe(this) {
             binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
         }
-        // Делаем контрольную проверку 1 раз при запуске экрана
+
+        // 5. Проверка при старте экрана
         binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
 
     }
