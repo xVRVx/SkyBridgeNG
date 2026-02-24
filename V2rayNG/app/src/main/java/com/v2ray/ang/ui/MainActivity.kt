@@ -103,34 +103,25 @@ class MainActivity : HelperBaseActivity(), NavigationView.OnNavigationItemSelect
         checkAndRequestPermission(PermissionType.POST_NOTIFICATIONS) {
         }
 
-// --- НАШ КОД ДЛЯ ПУСТОГО ЭКРАНА ---
-
-        // 1. Формируем текст с HTML тегами (используем <br> для переноса строки)
-        // Для прокси я использовал ссылку https://t.me/proxy?... - она надежнее открывает Telegram на всех устройствах
+// --- VRV START КОД ДЛЯ ПУСТОГО ЭКРАНА ---
         val emptyTextHtml = """
             <b>SkyBridge VPN</b><br><br>
-            Перейдите в Телеграм, чтобы получить нашу ВПН подписку<br>
+            Перейдите в Телеграм, чтобы получить нашу подписку<br>
             <a href="https://t.me/SkyBridge_VPN_bot">https://t.me/SkyBridge_VPN_bot</a><br><br>
-            <a href="https://t.me/proxy?server=fr1pr.sbknvp.xyz&port=443&secret=cbe8b9c11b4de45c7594089b93c25d59">ТГ прокси №1</a>
+            <a href="https://t.me/proxy?server=fr1pr.sbknvp.xyz&port=443&secret=cbe8b9c11b4de45c7594089b93c25d59">ТГ прокси №1</a><br>
+            <a href="https://t.me/socks?server=fr1pr.sbknvp.xyz&port=8443&user=SkyBridge_KVN&pass=TG_dsgk5_hdfDL13Z0pf_asDrDjki4">ТГ прокси №2</a><br>
+            <a href="https://t.me/socks?server=fr2pr.sbknvp.xyz&port=8443&user=SkyBridge_KVN&pass=TG_dsgk5_hdfDL13Z0pf_asDrDjki4">ТГ прокси №3</a><br>
         """.trimIndent()
-
-        // 2. Превращаем строку в HTML и отдаем в наш TextView
         binding.tvEmptyProfileMsg.text = androidx.core.text.HtmlCompat.fromHtml(
             emptyTextHtml,
             androidx.core.text.HtmlCompat.FROM_HTML_MODE_LEGACY
         )
-
-        // 3. Делаем ссылки кликабельными
         binding.tvEmptyProfileMsg.movementMethod = android.text.method.LinkMovementMethod.getInstance()
-
-        // 4. Подписываемся на обновления списка серверов для скрытия/показа текста
         mainViewModel.updateListAction.observe(this) {
             binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
         }
-
-        // 5. Проверка при старте экрана
         binding.tvEmptyProfileMsg.isVisible = mainViewModel.serversCache.isEmpty()
-
+// --- VRV END ---
     }
 
     private fun setupViewModel() {
