@@ -12,8 +12,8 @@ android {
         applicationId = "com.skybridge.ng"
         minSdk = 24
         targetSdk = 36
-        versionCode = 711
-        versionName = "2.0.11"
+        versionCode = 2
+        versionName = "1.0.2"
         multiDexEnabled = true
 
         val abiFilterList = (properties["ABI_FILTERS"] as? String)?.split(';')
@@ -25,10 +25,7 @@ android {
                     include(*abiFilterList.toTypedArray())
                 } else {
                     include(
-                        "arm64-v8a",
-                        "armeabi-v7a",
-                        "x86_64",
-                        "x86"
+                        "arm64-v8a"
                     )
                 }
                 isUniversalApk = abiFilterList.isNullOrEmpty()
